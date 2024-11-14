@@ -2,7 +2,4 @@
 
 # ***I'm nisikin***
 
-
-### GitHub 贡献贪吃蛇游戏
-
-![贪吃蛇动画](https://<your-username>.github.io/<repository-name>/snake.svg)
+![贪吃蛇动画](https://<nisikin>.github.io/<nisikin>/snake.svg)
