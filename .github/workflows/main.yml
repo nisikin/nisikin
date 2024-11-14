@@ -1,0 +1,35 @@
+name: Generate Snake Game from GitHub Contributions
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Optional: Schedule the action to run daily
+  push:
+    branches:
+      - main  # Or the branch where your contributions are being made
+
+jobs:
+  generate-snake-game:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install gitpython pillow
+
+      - name: Generate Snake Game from Contributions
+        run: |
+          python generate_snake_game.py
+
+      - name: Upload the Game Animation
+        uses: actions/upload-artifact@v2
+        with:
+          name: snake-game-animation
+          path: path/to/output/game-animation.gif  # Change to the path of your generated animation
